@@ -126,7 +126,7 @@ get_header(); ?>
 
                         let erSkjult = document.querySelector("#filterknapper").classList.contains("hidden");
 
-                        if (document.documentElement.clientWidth && erSkjult == true) {
+                        if (document.documentElement.clientWidth < 770 && erSkjult == true) { // skrifter mellem pil op og pil ned, afhæning af om den er skjult
                             document.querySelector("#kategori_h3").textContent = "Kategori ▼";
                         } else {
                             document.querySelector("#kategori_h3").textContent = "Kategori ▲";
