@@ -35,7 +35,7 @@ get_header(); ?>
 
     <section id="oversigt">
         <div id="filter">
-            <h3>Kategori</h3>
+            <h3 id="kategori_h3">Kategori</h3>
             <nav id="filterknapper" class="hidden">
                 <button data-kat="alle" class="alle">Alle</button>
             </nav>
@@ -112,10 +112,30 @@ get_header(); ?>
 
                 addEventListenerToButtons(); // Kalder den funktion der skal give eventlistener på alle knapper
 
+                // Hvis man ser på mobilen/ipad, så skal kategori-teksten også have en pil.
+                if (document.documentElement.clientWidth < 770) {
+                    document.querySelector("#kategori_h3").textContent = "Kategori ▼";
+                }
+
+                // Knap til mobilversion af drop down. Når der trykkes på "kategori" bliver der togglet mellem klassen hidden - display: none
                 document.querySelector("#filter").addEventListener("click", () => {
                     document.querySelector("#filterknapper").classList.toggle("hidden");
-                }) // Knap til mobilversion af drop down. Når der trykkes på "kategori" bliver der togglet mellem klassen hidden - display: none
+
+                    // Hvis man er på mobil, og filterknapperne har klassen "hidden" på, så skal pilen pege ned. Og ellers skal den pege på
+                    if (document.documentElement.clientWidth < 770) {
+
+                        let erSkjult = document.querySelector("#filterknapper").classList.contains("hidden");
+
+                        if (document.documentElement.clientWidth && erSkjult == true) {
+                            document.querySelector("#kategori_h3").textContent = "Kategori ▼";
+                        } else {
+                            document.querySelector("#kategori_h3").textContent = "Kategori ▲";
+                        }
+                    }
+                })
             }
+
+
 
             function addEventListenerToButtons() {
                 document.querySelectorAll("#filterknapper button").forEach(elm => {
@@ -140,7 +160,28 @@ get_header(); ?>
                         klon.querySelector(".pris").textContent = smykke.pris + " DKK"; // Pris hentes
                         klon.querySelector(".article_multiview").addEventListener("click", () => {
                             location.href = smykke.link;
-                        }) // sætter eventlistener på, så man kan klikke på produktet og komme til singleview
+                        })
+
+                        // Skift billede ved hover
+                        klon.querySelector(".img_front").addEventListener("mouseover", skiftBilled); // Laver en eventlistener som kører funktion "skiftBilled" når musen holdes over img
+
+                        function skiftBilled() { // Funktionen "skiftBilled"
+                            console.log("hover på billedet " + this.outerHTML); // Tjekker om funktionen køres på "this" (den gældende i "smykke")
+
+                            this.src = smykke.billede_model.guid; //Det gældende img får skiftet billedet ud med "billede_model" fra databasen
+
+                        }
+
+                        // Skift billede tilbage
+                        klon.querySelector(".img_front").addEventListener("mouseout", skiftTilbage); // Laver en eventlistener som kører funktion "skiftTilbage" når musen fjernes fra img
+
+                        function skiftTilbage() {
+                            console.log("hover på billedet " + this.outerHTML); // Tjekker om funktionen køres på "this" (den gældende i "smykke")
+
+                            this.src = smykke.billede_front.guid; //Det gældende img får skiftet billedet ud med "billede_front" fra databasen
+                        }
+
+                        // sætter eventlistener på, så man kan klikke på produktet og komme til singleview
                         container.appendChild(klon); // Indholdet i templaten bliver sat ind i vores sektion
                     }
                 })
