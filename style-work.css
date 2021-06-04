@@ -1,0 +1,357 @@
+/*
+Theme Name: LIIRÓ
+Template: astra
+*/
+
+.ast-separate-containers,
+#page {
+    background-color: white;
+}
+
+/* STYLING I MENU PÅ MOBIL*/
+.ast-header-break-point .ast-builder-menu-1 .menu-item.menu-item-has-children > .ast-menu-toggle {
+    top: 0;
+    background: none;
+    border: none;
+}
+
+/*               FORSIDE                */
+
+#splash {
+    overflow: hidden;
+}
+
+/*                 MULTIVIEW             */
+
+/*Styling af knapper*/
+#filter {
+    margin-left: 20px;
+}
+
+#filter button {
+    padding: 2px;
+    margin-top: 15px;
+    border: 0px;
+    text-align: left;
+    display: flex;
+}
+
+#filter button:hover {
+    background: none;
+    text-decoration: underline;
+    color: black;
+}
+
+#filter button:focus {
+    background: none;
+    text-decoration: underline;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling af sektion*/
+#sektion_smykker {
+    background-color: #F2F0EA;
+    margin: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.article_multiview {
+    padding: 12px;
+    margin: auto;
+}
+
+.article_multiview img {
+    border: 0.5px solid #000000;
+    object-fit: cover;
+    background-color: white;
+    width: 200px;
+    height: 180px;
+}
+
+/* teskt under billede*/
+.produktinfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.produktinfo p {
+    font-size: 0.79rem;
+}
+
+/*             SINGLEVIEW                */
+
+
+#sektion_singeview {
+    margin: 20% 0 7% 0;
+}
+
+.tilbageknap {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.frem {
+    right: 1vw;
+}
+
+.tilbage {
+    left: 1vw;
+}
+
+/* Slideshow*/
+
+#slideshow {
+    background-color: #F2F0EA;
+    padding: 30px 30px 10px 30px;
+}
+
+.skift_billede {
+    display: flex;
+    justify-content: center;
+}
+
+.skift_billede .frem,
+.skift_billede .tilbage {
+    background: none;
+    color: black;
+}
+
+.skift_billede .frem:hover,
+.skift_billede .tilbage:hover {
+    color: #939393;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #939393;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-top: 17px;
+}
+
+.valgt_dot {
+    background-color: #555454;
+}
+
+/* H2 på singleview*/
+.navn {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 30px 0 10px 0;
+}
+
+/* Styling af sort streg*/
+.singleview_column hr {
+    border-top: 1px solid black;
+    width: 100px;
+}
+
+.tilfoej {
+    display: grid;
+    margin: auto;
+    border: 1px solid black;
+}
+
+/*            KOLLEKTION             */
+
+#quirky_smykker,
+#coiils_smykker {
+    overflow-x: scroll;
+    display: flex;
+    column-gap: 20px;
+}
+
+.kollektion_div {
+    width: 200px;
+    padding: 10px;
+}
+
+.kollektion_div img {
+    border: 1px solid black;
+}
+
+/* FOOTER */
+
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-1"] .widget-title,
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] .widget-title {
+    font-size: 1.4rem;
+}
+
+footer a {
+    line-height: 40px;
+    font-size: 1rem;
+}
+
+
+
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+
+
+    /*    MULTIVIEW */
+
+    .article_multiview img {
+        width: 350px;
+        height: 380px;
+    }
+
+    .hidden {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #oversigt {
+        margin: 0 40px 40px 40px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    #filterknapper,
+    #filter h3 {
+        position: fixed;
+    }
+
+    #filterknapper {
+        margin-top: 20px;
+    }
+
+    #sektion_smykker {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .article_multiview {
+        padding: 25px;
+    }
+
+    /* teskt under billede*/
+
+    .produktinfo {
+        justify-content: space-between;
+        flex-direction: row;
+        max-width: 350px;
+    }
+
+    .produktinfo p {
+        font-size: 0.8rem;
+    }
+
+    #sektion_singeview {
+        margin: 10% 0 7% 0;
+    }
+
+    .tilbageknap {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Slideshow*/
+    .skift_billede .frem,
+    .skift_billede .tilbage {
+        font-size: 1.2rem;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .dot {
+        margin-top: 19px;
+    }
+
+    .navn {
+        font-size: 2.1rem;
+        text-transform: uppercase;
+        margin: 30px 0 10px 0;
+    }
+
+    .singleview_row p,
+    .tilfoej {
+        font-size: 1.2rem;
+    }
+
+    /*            QURCKY KOLLEKTION             */
+
+    .kollektion_div {
+        width: 350px;
+    }
+
+    /*    FOOTER */
+
+    .footer-widget-area[data-section="sidebar-widgets-footer-widget-1"] .widget-title,
+    .footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] .widget-title {
+        font-size: 1.2rem;
+    }
+
+    footer a {
+        line-height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 1200px) {
+
+    .article_multiview {
+        cursor: pointer;
+    }
+
+    /*    MULTIVIEW */
+    #oversigt {
+        grid-template-columns: 10% 90%;
+
+    }
+
+    #sektion_smykker {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    /*                SINGELVIEW         */
+    #sektion_singeview {
+        margin: 7% 80px 7% 80px;
+    }
+
+    /*    Sætter i grid*/
+    .singleview_row {
+        display: grid;
+        grid-template-columns: 3fr 4fr;
+        column-gap: 50px;
+    }
+
+    .navn {
+        font-size: 1.6rem;
+    }
+
+    .singleview_row p {
+        font-size: 1rem;
+    }
+
+    .tilfoej {
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+}
+
+/* Kurven i menu der drillede*/
+.textwidget p {
+    margin: 0;
+}
+
+#kurv {
+    display: flex;
+}
+
+#kurv img {
+    margin: 4px;
+    width: 20px;
+    height: auto;
+}
