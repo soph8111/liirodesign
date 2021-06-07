@@ -52,6 +52,10 @@ Template: astra
     display: none;
 }
 
+#kategori_h3 {
+    cursor: pointer;
+}
+
 /* Styling af sektion*/
 #sektion_smykker {
     background-color: #F2F0EA;
@@ -203,6 +207,7 @@ footer a {
     .article_multiview img {
         width: 350px;
         height: 380px;
+        cursor: pointer;
     }
 
     .hidden {
@@ -277,10 +282,11 @@ footer a {
         font-size: 1.2rem;
     }
 
-    /*            QURCKY KOLLEKTION             */
+    /*            KOLLEKTION             */
 
     .kollektion_div {
         width: 350px;
+        cursor: pointer;
     }
 
     /*    FOOTER */
@@ -299,10 +305,6 @@ footer a {
 
 /* DESKTOP */
 @media screen and (min-width: 1200px) {
-
-    .article_multiview {
-        cursor: pointer;
-    }
 
     /*    MULTIVIEW */
     #oversigt {
